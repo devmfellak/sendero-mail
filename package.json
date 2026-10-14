@@ -1,0 +1,36 @@
+{
+  "name": "sendero",
+  "version": "0.8.0",
+  "private": true,
+  "description": "Sendero — an AI email agent for Microsoft 365. Triage, file, draft and follow up across many Outlook mailboxes, in English and Spanish, with a human in the loop wherever it matters.",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "demo:reset": "node -e \"require('fs').rmSync('.data',{recursive:true,force:true})\"",
+    "eval:triage": "tsx scripts/eval-triage.ts",
+    "clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\""
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "@google/genai": "^2.28.0",
+    "jose": "^6.2.12",
+    "next": "^15.5.27",
+    "openai": "^7.32.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^4.6.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.7.0"
+  }
+}
